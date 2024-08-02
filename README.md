@@ -18,7 +18,7 @@
 
 4. Install Python dependencies:
     ```sh
-    pip install -r temp_requirements.txt
+    pip install -r requirements.txt
     ```
 
 5. Clone and install Detectron2:
