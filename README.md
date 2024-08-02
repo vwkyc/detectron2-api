@@ -2,12 +2,13 @@
 
 1. Update package lists:
     ```sh
+    # sudo add-apt-repository ppa:deadsnakes/ppa #if unable to install python3.8-venv
     sudo apt-get update
     ```
 
 2. Install dependencies:
     ```sh
-    sudo apt-get install -y libgl1-mesa-glx python3.8-venv
+    sudo apt-get install -y libgl1-mesa-glx git build-essential python3.8-venv python3.8-dev
     ```
 
 3. Create and activate a virtual environment:
@@ -25,13 +26,9 @@
     ```sh
     git clone https://github.com/facebookresearch/detectron2.git
     cd detectron2
-    pip install -e .
-    cd ..
+    python setup.py develop
     ```
 
-6. Run the application:
-    ```sh
-    python app.py
-    ```
+served on http://localhost:5000/detect
 
-havent tested ^
+tested working on Ubuntu jammy 22.04 x86_64 Host: Windows Subsystem for Linux - Ubuntu (2.3.14)
