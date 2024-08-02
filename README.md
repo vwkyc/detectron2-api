@@ -2,7 +2,6 @@
 
 1. Update package lists:
     ```sh
-    # sudo add-apt-repository ppa:deadsnakes/ppa #if unable to install python3.8-venv
     sudo apt-get update
     ```
 
@@ -13,8 +12,8 @@
 
 3. Create and activate a virtual environment:
     ```sh
-    python3.8 -m venv detectron2_env
-    source detectron2_env/bin/activate
+    python3.8 -m venv venv
+    source venv/bin/activate
     ```
 
 4. Install Python dependencies:
@@ -29,6 +28,11 @@
     python setup.py develop
     ```
 
-served on http://localhost:5000/detect
+6. Run the application:
+    ```sh
+    gunicorn -c gunicorn_config.py app:app
+    ```
 
-tested working on Ubuntu jammy 22.04 x86_64 Host: Windows Subsystem for Linux - Ubuntu (2.3.14)
+The application will be served on [http://localhost:5000/detect](http://localhost:5000/detect).
+
+Tested working on Ubuntu Jammy 22.04 x86_64, Host: Windows Subsystem for Linux - Ubuntu (2.3.14).

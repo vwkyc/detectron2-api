@@ -1,0 +1,18 @@
+# sudo nano /etc/systemd/system/detectron2-api.service
+# REPLACE USERNAME IN WorkingDirectory and ExecStart PATH
+
+[Unit]
+Description=Gunicorn instance to serve detectron2-api
+After=network.target
+
+[Service]
+User=your_user
+Group=www-data
+WorkingDirectory=/home/username/detectron2-api/app.py 
+ExecStart=/home/username/detectron2-api/venv/bin/gunicorn -c /home/username/detectron2-api/gunicorn_config.py app:app
+
+[Install]
+WantedBy=multi-user.target
+
+# sudo systemctl enable detectron2-api
+# sudo systemctl start detectron2-api
