@@ -1,4 +1,5 @@
 detectron2_env/
+detectron2/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
