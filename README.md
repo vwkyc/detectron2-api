@@ -25,7 +25,8 @@
     ```sh
     git clone https://github.com/facebookresearch/detectron2.git
     cd detectron2
-    python setup.py develop
+    pip install -e .
+    cd ..
     ```
 
 6. Run the application:
