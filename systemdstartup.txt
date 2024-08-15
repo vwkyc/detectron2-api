@@ -6,10 +6,12 @@ Description=Gunicorn instance to serve detectron2-api
 After=network.target
 
 [Service]
-User=your_user
+User=USERNAME
 Group=www-data
-WorkingDirectory=/home/username/detectron2-api
-ExecStart=/home/username/detectron2-api/venv/bin/gunicorn -c /home/username/detectron2-api/gunicorn_config.py app:app
+WorkingDirectory=/home/USERNAME/detectron2-api
+ExecStart=/home/USERNAME/detectron2-api/venv/bin/gunicorn -c /home/USERNAME/detectron2-api/gunicorn_config.py app:app
+Restart=always
+Environment="PATH=/home/USERNAME/detectron2-api/venv/bin"
 
 [Install]
 WantedBy=multi-user.target
