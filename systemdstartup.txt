@@ -8,7 +8,7 @@ After=network.target
 [Service]
 User=your_user
 Group=www-data
-WorkingDirectory=/home/username/detectron2-api/app.py 
+WorkingDirectory=/home/username/detectron2-api
 ExecStart=/home/username/detectron2-api/venv/bin/gunicorn -c /home/username/detectron2-api/gunicorn_config.py app:app
 
 [Install]
